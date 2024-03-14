@@ -1,3 +1,20 @@
 {
-  "server_url": "http://gog-dev.kingsgroup.cn/api/"
+  "server_url": "http://gog-dev.kingsgroup.cn/api/",
+  "users":[
+     {
+        "fpid":"12345"
+     },
+    {
+      "fpid":"12345"
+    },
+    {
+      "fpid":"12345"
+    },
+    {
+      "fpid":"12345"
+    },
+    {
+      "fpid":"12345"
+    }
+  ]
 }

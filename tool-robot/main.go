@@ -1,20 +1,23 @@
+/**
+ * @Author: hujian
+ * @Description:
+ * @File: main.go
+ * @Date: 2024/2/14 22:55
+ */
 package main
 
-import "fmt"
-
-func seques() func() int {
-	var x int
-	return func() int {
-		x++
-		return x * x
-	}
-}
+import (
+	"github.com/bench/tools/util"
+	"path"
+	"runtime"
+)
 
 func main() {
-	f := seques()
-	fmt.Println(f())
-	fmt.Println(f())
-
-	fmt.Println(seques()())
-	fmt.Println(seques()())
+	const filepath = "config\\robots.json"
+	_, fileName, _, _ := runtime.Caller(0)
+	dataPath := path.Join(path.Dir(fileName), filepath)
+	rootCfg := util.ParseRootConfigFromJson(dataPath)
+	if len(rootCfg.Users) == 0 {
+		return
+	}
 }
