@@ -11,12 +11,14 @@ import "github.com/bench/tools/util"
 // 空状态
 type EmptyFSMState struct {
 	util.FSMState
+	player *Player
 }
 
 func (e *EmptyFSMState) Enter() {
-
+	util.DebugLog("fpid:%s EmptyFSMState Enter", e.player.GetFpid())
+	e.player.ChangeState(util.FSM_State_Login)
 }
 
 func (e *EmptyFSMState) Exit() {
-
+	util.DebugLog("fpid:%s EmptyFSMState Exit", e.player.GetFpid())
 }

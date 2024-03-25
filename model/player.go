@@ -37,11 +37,15 @@ func (p *Player) Init(serverUrl string, userInfo *UserInfo) {
 
 	//初始化状态
 	p.fsm = new(util.FSM)
-	p.fsm.AddState(util.FSM_State_Empty, &EmptyFSMState{})
-	p.fsm.AddState(util.FSM_State_Login, &LoginFSMState{})
-	p.fsm.AddState(util.FSM_State_Gameing, &GameFSMState{})
-	p.fsm.AddState(util.FSM_State_Broken, &BrokenFSMState{})
+	p.fsm.AddState(util.FSM_State_Empty, &EmptyFSMState{player: p})
+	p.fsm.AddState(util.FSM_State_Login, &LoginFSMState{player: p})
+	p.fsm.AddState(util.FSM_State_Gameing, &GameFSMState{player: p})
+	p.fsm.AddState(util.FSM_State_Broken, &BrokenFSMState{player: p})
 	p.fsm.ChangeState(util.FSM_State_Empty)
+}
+
+func (p *Player) ChangeState(state int) bool {
+	return p.fsm.ChangeState(state)
 }
 
 func (p *Player) SendRequest(class string, method string, params map[string]interface{}) (map[string]interface{}, error) {
@@ -66,4 +70,8 @@ func (p *Player) SendRequest(class string, method string, params map[string]inte
 	}
 
 	return result, nil
+}
+
+func (p *Player) GetFpid() string {
+	return p.Fpid
 }

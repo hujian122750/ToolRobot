@@ -6,7 +6,10 @@
  */
 package util
 
-import "sync"
+import (
+	"sync"
+	"unsafe"
+)
 
 const (
 	//空状态
@@ -44,6 +47,12 @@ type FSM struct {
 	states map[int]IFSMState
 	//当前状态
 	current_state int
+	//调用者
+	p unsafe.Pointer
+}
+
+func (f *FSM) Init(p unsafe.Pointer) {
+	f.p = p
 }
 
 /*

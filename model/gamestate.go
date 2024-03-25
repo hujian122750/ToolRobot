@@ -11,6 +11,7 @@ import "github.com/bench/tools/util"
 // 游戏中状态
 type GameFSMState struct {
 	util.FSMState
+	player *Player
 }
 
 func (g *GameFSMState) Enter() {

@@ -28,3 +28,7 @@ func ParseRootConfigFromJson(filepath string) *model.RobotConf {
 	}
 	return conf
 }
+
+func DebugLog(format string, a ...any) {
+	fmt.Sprintf(format, a)
+}

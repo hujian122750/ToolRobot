@@ -11,6 +11,7 @@ import "github.com/bench/tools/util"
 // 断开状态
 type BrokenFSMState struct {
 	util.FSMState
+	player *Player
 }
 
 func (b *BrokenFSMState) Enter() {
