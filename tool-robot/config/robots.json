@@ -1,5 +1,5 @@
 {
-  "server_url": "http://gog-dev.kingsgroup.cn/api/",
+  "server_url": "http://mc-master.kingsgroupgames.com/api/",
   "users":[
      {
         "fpid":"12345"
