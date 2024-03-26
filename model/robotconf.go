@@ -7,5 +7,6 @@ type RobotConf struct {
 }
 
 type UserInfo struct {
-	Fpid string `json:"fpid"`
+	Fpid      string `json:"fpid"`
+	KingdomId int    `json:"kingdomid"`
 }

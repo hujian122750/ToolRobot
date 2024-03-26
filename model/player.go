@@ -75,3 +75,7 @@ func (p *Player) SendRequest(class string, method string, params map[string]inte
 func (p *Player) GetFpid() string {
 	return p.Fpid
 }
+
+func (p *Player) GetUid() int32 {
+	return p.Uid
+}

@@ -7,25 +7,17 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"github.com/bench/tools/util"
+	"path"
+	"runtime"
 )
 
 func main() {
-	args := os.Args
-	if args == nil || len(args) == 0 {
-		panic("input args len < 0")
-	}
-
-	filePath := args[0]
-	fmt.Println("projects file path: ", filePath)
-
-	_, err := os.Stat(filePath)
-	if err != nil {
-		if os.IsNotExist(err) {
-			panic(fmt.Sprintf("%s is not exist", filePath))
-		} else {
-			panic(fmt.Sprintf("error: %v", err))
-		}
+	const filepath = "config/loadsql.json"
+	_, fileName, _, _ := runtime.Caller(0)
+	dataPath := path.Join(path.Dir(fileName), filepath)
+	codeCfg := util.ParseCodeConfigFromJson(dataPath)
+	if len(codeCfg.Tables) == 0 {
+		return
 	}
 }

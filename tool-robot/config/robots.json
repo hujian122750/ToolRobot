@@ -2,19 +2,24 @@
   "server_url": "http://mc-master.kingsgroupgames.com/api/",
   "users":[
      {
-        "fpid":"12345"
+        "fpid":"12340",
+        "kingdomid":1
      },
     {
-      "fpid":"12345"
+      "fpid":"12341",
+       "kingdomid":1
     },
     {
-      "fpid":"12345"
+      "fpid":"12342",
+      "kingdomid":1
     },
     {
-      "fpid":"12345"
+      "fpid":"12343",
+      "kingdomid":1
     },
     {
-      "fpid":"12345"
+      "fpid":"12344",
+      "kingdomid":1
     }
   ]
 }
