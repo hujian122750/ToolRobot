@@ -1,0 +1,22 @@
+CREATE TABLE `UserCvcBattle` (
+  `uid` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `match_type` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '战场类型',
+  `season_id` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '赛季id',
+  `scene_state` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '场景状态',
+  `team_id` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '进入战场时队伍id',
+  `match_id` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '比赛id',
+  `stats` varchar(100) BINARY NOT NULL DEFAULT '' COMMENT '比赛状态',
+  `leave_mode` varchar(100) BINARY NOT NULL DEFAULT '' COMMENT '离开方式',
+  `leave_cd` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '离开cd',
+  `migrate_times` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '迁城次数',
+  `migrate_cd` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '迁城CD',
+  `freeze_end_ts` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '玩家冰冻效果结束时间戳',
+  `kill_record` blob COMMENT '击杀他人士兵实例统计',
+  `hospital_troop` blob COMMENT '医院兵力',
+  `dead_total` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '死兵数',
+  `hospital_job_id` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '治疗jobid',
+  `_content` blob COMMENT '其他',
+  ctime timestamp NOT NULL DEFAULT 0,
+  mtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`, `match_type`)
+) ENGINE = INNODB DEFAULT CHARSET=utf8;

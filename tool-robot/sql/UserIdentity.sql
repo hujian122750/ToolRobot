@@ -1,0 +1,9 @@
+CREATE TABLE `UserIdentity` (
+  `uid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `identity` VARCHAR(18),
+  `tel` VARCHAR(11),
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

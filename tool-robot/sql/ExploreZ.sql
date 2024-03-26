@@ -1,0 +1,23 @@
+CREATE TABLE `ExploreZ` (
+    `uid` bigint(20) unsigned NOT NULL,
+    `npcs` blob COMMENT '城内npc的信息',
+    `mermaid_npcs` blob COMMENT '美人鱼npc',
+    `finished_tasks` blob COMMENT '已经完成的剧情任务   //1:气泡状态 -1:pass状态',
+    `map_obj_state` blob COMMENT 'key: obj_id value:state 场景对象的状态 -1:废墟中 0:已清理完成 1:被清理掉: 2:中立 3:占领完成 4:被占领 5:修理完成 6:完成上交道具',
+    `current_story_id` bigint(20) unsigned NOT NULL  COMMENT '当前进行中的章节',
+    `explored_areas_info` blob COMMENT '探索完成的区域 id:areaId value: state: 1:探索迷雾中 2:迷雾可以打开 3:探索完成 4:占领',
+    `event_data` blob COMMENT 'event事件数据记录',
+    `interactions` blob COMMENT '城内npc的信息',
+    `random_events` blob COMMENT '随机事件',
+    `repeat_obj_ids` blob COMMENT '出现过的地块建筑',
+    `neptune_treasure` blob COMMENT '海神宝物',
+    `sea_index_obj` blob COMMENT '海上采集物',
+    `npc_index` bigint(20) unsigned NOT NULL  COMMENT '',
+    `faction` bigint(20) unsigned NOT NULL  COMMENT '阵营',
+    `refresh` bigint(20) unsigned NOT NULL  COMMENT '上次刷新时间戳',
+    `puzzle_info` blob COMMENT '玩法完成数据',
+    `thief_info` blob COMMENT '小偷数据',
+    `ctime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+    `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `UserTreasureChest` (
+  `uid` BIGINT UNSIGNED NOT NULL,
+  `config_id` BIGINT UNSIGNED NOT NULL COMMENT 'alliance_personal_chest.internal_id',
+  `status` ENUM('none', 'done') NOT NULL DEFAULT 'none' COMMENT 'none: 可发放, done: 已发放',
+  `alliance_id` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '发送的联盟id',
+  `id` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'AllianceTreasuryVault.id',
+  `expire_time` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ctime` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`, `config_id`)
+) ENGINE = INNODB DEFAULT CHARSET utf8;

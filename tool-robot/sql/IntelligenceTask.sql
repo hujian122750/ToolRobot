@@ -1,0 +1,20 @@
+CREATE TABLE `IntelligenceTask` (
+                                       `uid` bigint(20) unsigned NOT NULL,
+                                       `slot_id` int unsigned NOT NULL COMMENT '任务槽位id',
+                                       `level_id` bigint(20) unsigned NOT NULL COMMENT 'intelligence_main_level.internalId',
+                                       `exclusive_id` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT 'intelligence_exclusive_refresh.internalId',
+                                       `task_type` varchar(64) NOT NULL COMMENT '任务类型',
+                                       `status` int(11) NOT NULL DEFAULT '0' COMMENT '任务状态 0 可接、1正在进行、2 已完成',
+                                       `is_init_task` tinyint(2) NOT NULL DEFAULT '0' COMMENT '是否初始指定任务',
+                                       `map_x` int unsigned NOT NULL COMMENT '地图坐标x',
+                                       `map_y` int unsigned NOT NULL COMMENT '地图坐标y',
+                                       `block_id` int unsigned NOT NULL COMMENT 'block_id',
+                                       `intel_rewards` blob comment '任务奖励',
+                                       `march_rewards` blob comment '行军奖励',
+                                       `march_id` bigint unsigned  default 0 COMMENT 'march_id',
+                                       `verification_id` bigint unsigned  default 0 COMMENT 'intelligence_verification_refresh',
+                                       `ctime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                       `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                       PRIMARY KEY (`uid`,`slot_id`) USING BTREE,
+                                       INDEX index_xy(`map_x`,`map_y`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

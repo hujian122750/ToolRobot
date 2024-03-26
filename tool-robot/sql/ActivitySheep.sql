@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `ActivitySheep` (
+    `uid` bigint(20) NOT NULL,
+    `season_id` bigint(20) NOT NULL COMMENT '活动赛季id',
+    `activity_group_id` bigint(20) NOT NULL COMMENT '活动组ID',
+    `stage_id` bigint(20) NOT NULL COMMENT '关卡ID',
+    `level` bigint(20) NOT NULL COMMENT '关卡',
+    `challenge_times` bigint(20) NOT NULL COMMENT '挑战次数',
+    `last_login_time` bigint(20) NOT NULL COMMENT '上次登录时间',
+    `undealt_pattern` blob COMMENT '未处理的图案',
+    `stash_pattern` blob COMMENT '移出区的图案',
+    `match_pattern` blob COMMENT '匹配区的图案',
+    `remainder` blob COMMENT '洗牌时需要补全的图案',
+    `last_action` varchar(100) DEFAULT NULL COMMENT '上一次操作',
+    `result` bigint(20) NOT NULL COMMENT '关卡结果',
+    `buy_chance_today` bigint(20) NOT NULL COMMENT '当天购买体力次数',
+    `pattern_reward` blob COMMENT '获得的奖励道具',
+    `match_id` bigint(20) NOT NULL COMMENT '本场ID',
+    `buy_times` bigint(20) NOT NULL COMMENT '付费购买次数',
+    `ctime` timestamp NOT NULL DEFAULT 0,
+    `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`uid`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=Dynamic;

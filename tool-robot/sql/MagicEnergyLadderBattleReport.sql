@@ -1,0 +1,16 @@
+CREATE TABLE MagicEnergyLadderBattleReport (
+  `uid` BIGINT UNSIGNED NOT NULL,
+  `rival_uid` BIGINT UNSIGNED NOT NULL,
+  `report_id` BIGINT UNSIGNED NOT NULL,
+  `attacker` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `win` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `summary` BLOB NULL,
+  `revenge_cd_time` TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',
+  `revenged` TINYINT NOT NULL DEFAULT 0,
+  `gain_info` BLOB NULL,
+  `loss_info` BLOB NULL,
+  `rival_info` BLOB NULL,
+  `self_info` BLOB NULL,
+  `ctime` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`, `rival_uid`, `report_id`));

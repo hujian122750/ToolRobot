@@ -1,0 +1,28 @@
+CREATE TABLE `Legend2`
+(
+    `uid`             bigint(20) unsigned  NOT NULL,
+    `legend_id`       bigint(20) unsigned  NOT NULL,
+    `position`        tinyint(3) unsigned  NOT NULL COMMENT '0: 空闲; 1-8: 任命的不同官职(parliament.id)',
+    `adjutant`        bigint(20) unsigned  NOT NULL DEFAULT '0' COMMENT '副官internal id',
+    `level`           smallint(5) unsigned NOT NULL DEFAULT '0',
+    `xp`              bigint(20) unsigned  NOT NULL DEFAULT '0',
+    `star`            smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '星级',
+    `new_star`            smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '新星级',
+    `status`          tinyint(4) unsigned  NOT NULL DEFAULT '0' COMMENT '英雄的出征状态: 0: 闲置, 1: 城市驻防, 2: 军队出征',
+    `march_id`        bigint(20)           NOT NULL DEFAULT '0' COMMENT '随军出征的MarchId',
+    `artifact_id`     bigint(20) unsigned  NOT NULL DEFAULT '0',
+    `attr_add_point`  blob COMMENT '属性加点信息, {"attr_type1": attr_point1, "attr_type1": attr_point1}, 动态长度',
+    `has_reward`      tinyint(4)           NOT NULL DEFAULT '0' COMMENT '是否已领取招募奖励',
+    `backpack_num`    bigint(20)           NOT NULL DEFAULT '0' COMMENT '背包里英雄数量',
+    `do_treasure`     tinyint(2)                    DEFAULT '0' COMMENT '是否正在英雄寻宝',
+    `artifact_id_new` bigint(20) unsigned  NOT NULL DEFAULT '0' COMMENT '武器背包索引',
+    `gene`            blob COMMENT '星座天赋',
+    `constellation`   blob COMMENT '星座',
+    `benefits`         blob COMMENT '出战增益',
+    `arms`            blob COMMENT '随身武器',
+    `power`           bigint(20) unsigned  NOT NULL DEFAULT '0' COMMENT '战力',
+    `ctime`           timestamp            NOT NULL DEFAULT '0000-00-00 00:00:00',
+    `mtime`           timestamp            NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`uid`, `legend_id`),
+    KEY `ids_on_up` (`uid`, `position`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;

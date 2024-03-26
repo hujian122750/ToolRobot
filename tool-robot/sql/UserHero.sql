@@ -1,0 +1,21 @@
+CREATE TABLE UserHero (
+    uid bigint unsigned NOT NULL,
+    level tinyint unsigned NOT NULL DEFAULT 1 COMMENT "A Lord has a level",
+    xp bigint unsigned NOT NULL DEFAULT 0 COMMENT "A Lord has XP",
+    skill_points int unsigned NOT NULL DEFAULT  0 COMMENT "A lord's skill points",
+    equipment blob COMMENT "{type => equip_id}",
+    equipment_suit BLOB NOT NULL COMMENT '套装个数 {suit_id => num}',
+    outfit blob comment '快速切换一套装备',
+    artifact blob COMMENT "{position => id}",
+    artifact_limit blob comment '限时神器 {position => purchased_index}',
+    spirit bigint unsigned NOT NULL DEFAULT 0 COMMENT "spirit cost to attack monster",
+    spirit_recover_time timestamp NOT NULL DEFAULT 0 COMMENT "spirit recover full time",
+    explore_spirit bigint  NOT NULL DEFAULT 0 COMMENT "explore spirit cost to explore",
+    explore_spirit_recover_time timestamp NOT NULL DEFAULT 0 COMMENT "explore spirit recover full time",
+    active_skill blob COMMENT "skill_id => {active_time, job_id}",
+    current_skill_group_id tinyint unsigned not null default 1,
+    war_medal blob comment '锦标赛个人勋章',
+    ctime timestamp NOT NULL DEFAULT 0 COMMENT "A Lord was created on",
+    mtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (uid)
+) ENGINE=INNODB DEFAULT CHARSET utf8;

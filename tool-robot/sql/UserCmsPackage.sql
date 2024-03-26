@@ -1,0 +1,10 @@
+CREATE TABLE `UserCmsPackage` (
+  `uid` BIGINT UNSIGNED NOT NULL,
+  `package_id` VARCHAR(128) NOT NULL DEFAULT '',
+  `window_id` BIGINT NOT NULL DEFAULT 0,
+  `bought_times` INT NULL DEFAULT 0 COMMENT '玩家购买的总次数',
+  `activity_bought_times` INT NULL DEFAULT 0 COMMENT '玩家买N送M时的购买次数, 达到数量要求时重置',
+  `mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ctime` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`uid`, `package_id`, `window_id`)
+) ENGINE = INNODB DEFAULT CHARSET utf8;

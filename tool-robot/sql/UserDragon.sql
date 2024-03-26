@@ -1,0 +1,22 @@
+CREATE TABLE UserDragon (
+    uid bigint unsigned NOT NULL DEFAULT 0,
+    name varchar(100) DEFAULT NULL COMMENT "This is the dragon name",
+    is_default_name tinyint unsigned NOT NULL DEFAULT 1,
+    xp bigint unsigned NOT NULL DEFAULT 0,
+    level mediumint unsigned NOT NULL DEFAULT 0 COMMENT "A dragon has a level",
+    light_point bigint unsigned NOT NULL DEFAULT 0,
+    dark_point bigint unsigned NOT NULL DEFAULT 0,
+    tendency tinyint unsigned not null default 0 comment '倾向 normal=0,dark_2=1,dark_1=2,light_1=3,light_2=4',
+    skill blob default NULL,
+    skill_cost blob default NULL COMMENT "light and dark point cost detail for every skill",
+    skill_star blob NOT NULL,
+    skill_star_cost blob NOT NULL,
+    item_cost BLOB DEFAULT NULL COMMENT '龙技能升级的时候消耗的道具',
+    march_id bigint unsigned NOT NULL DEFAULT 0 COMMENT "A dragon can go on marches",
+    shadow_job_id bigint unsigned NOT NULL DEFAULT 0,
+    benefits blob default NULL COMMENT "current skills benefits",
+    emblems blob default NULL COMMENT "dragon emblems",
+    ctime timestamp NOT NULL DEFAULT 0 COMMENT "A dragon was created on",
+    mtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (uid)
+) ENGINE=INNODB DEFAULT CHARSET utf8;

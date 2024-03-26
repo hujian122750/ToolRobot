@@ -1,0 +1,10 @@
+CREATE TABLE `UserCmsQuest` (
+  `uid` BIGINT UNSIGNED NOT NULL,
+  `event_id` varchar(128) NOT NULL DEFAULT '',
+  `id` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `status` ENUM('none', 'done', 'claimed') NOT NULL DEFAULT 'none',
+  `trace` BLOB COMMENT '玩家达成的时候当时的状态和一些数据',
+  `ctime` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`, `event_id`, `id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

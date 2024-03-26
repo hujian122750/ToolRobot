@@ -1,0 +1,21 @@
+CREATE TABLE `UserKingdomQuest` (
+  `uid` bigint(20) NOT NULL,
+  `quest_id` bigint(20) DEFAULT NULL,
+  `season` bigint(20) DEFAULT NULL,
+  `reward` bigint(20) DEFAULT NULL,
+  `state` smallint(6) DEFAULT NULL,
+  `cur_num` bigint(20) DEFAULT NULL,
+  `req_num` bigint(20) DEFAULT NULL,
+  `limit_job` bigint(20) DEFAULT NULL,
+  `record_id` bigint(20) DEFAULT NULL,
+  `daily_times` int(11) DEFAULT NULL,
+  `buy_times` int(11) DEFAULT NULL,
+  `can_buy_times` int(11) DEFAULT NULL,
+  `accept_time` timestamp NULL DEFAULT NULL,
+  `accept_times` int(11) DEFAULT NULL,
+  `commit_times` int(11) DEFAULT NULL,
+  `season_reward` int(11) DEFAULT NULL,
+  `ctime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `mtime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`)
+);

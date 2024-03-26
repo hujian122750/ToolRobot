@@ -1,0 +1,16 @@
+CREATE TABLE `CrossKGE` (
+    `uid` BIGINT UNSIGNED NOT NULL,
+    `season_id` BIGINT UNSIGNED NOT NULL,
+    `back_job` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    `resources` BLOB,
+    `robbed_resources` BLOB,
+    `cross_times` INT UNSIGNED NOT NULL DEFAULT 0,
+    `irrupt_cold_time` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+    `bounty_value` INT UNSIGNED NOT NULL DEFAULT 0 comment '悬赏值',
+    `bounty_last_change_time` INT UNSIGNED NOT NULL DEFAULT 0 comment '悬赏值结算时间',
+    `bounty_stage` INT UNSIGNED NOT NULL DEFAULT 0 comment '悬赏阶段',
+    `buy_records` blob COMMENT '战争商店购买记录',
+    `stop_bounty` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否处于悬赏值暂停状态，1：是、0：否',
+    `mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `ctime` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+PRIMARY KEY (`uid`));

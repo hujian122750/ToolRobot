@@ -1,0 +1,21 @@
+CREATE TABLE `CityMap` (
+  `uid` bigint unsigned NOT NULL,
+  `city_id` bigint unsigned NOT NULL,
+  `building_id` bigint unsigned NOT NULL, 
+  `slot_id` int NOT NULL ,
+  `x` int DEFAULT 0,
+  `y` int DEFAULT 0,
+  `own` tinyint DEFAULT 0,
+  `type` int unsigned DEFAULT 0 ,
+  `type_id` int unsigned DEFAULT 0 ,
+  `level` tinyint unsigned DEFAULT 0 ,
+  `glory_level` SMALLINT(5) UNSIGNED NOT NULL DEFAULT 0,
+  `job_id` bigint unsigned DEFAULT 0 COMMENT 'job_id will be greater than 0, when status is greater than 0',
+  `task_job_id` bigint unsigned DEFAULT 0 COMMENT 'train troop job id',
+  `in_building` blob COMMENT 'troops trained but not collected or resource not collected',
+  `status` int unsigned NOT NULL DEFAULT 0 COMMENT '0:normal; 1:upgrading; 2:tearing down',
+  `ctime` timestamp NOT NULL DEFAULT 0,
+  `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY(`uid`, `city_id`, `building_id`),
+  KEY(`uid`, `city_id`, `slot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
