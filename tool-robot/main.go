@@ -30,7 +30,7 @@ func main() {
 
 	wg := sync.WaitGroup{}
 	for index := 0; index < len(rootCfg.Users); index++ {
-		go func(user *model.UserInfo) {
+		go func(user *util.UserInfo) {
 			player := new(model.Player)
 			player.Init(rootCfg.ServerURL, user)
 			PlayerManager.AddWatchPlayer(player)

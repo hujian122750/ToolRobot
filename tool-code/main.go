@@ -15,9 +15,15 @@ import (
 func main() {
 	const filepath = "config/loadsql.json"
 	_, fileName, _, _ := runtime.Caller(0)
-	dataPath := path.Join(path.Dir(fileName), filepath)
+	pathstr := path.Dir(fileName)
+	dataPath := path.Join(pathstr, filepath)
 	codeCfg := util.ParseCodeConfigFromJson(dataPath)
 	if len(codeCfg.Tables) == 0 {
 		return
+	}
+
+	for i := 0; i < len(codeCfg.Tables); i++ {
+		s, _ := util.ParseSql(pathstr, codeCfg.Tables[i])
+		util.TransferStruct(pathstr, s)
 	}
 }

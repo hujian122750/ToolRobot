@@ -1,4 +1,4 @@
-package model
+package util
 
 // 可以通过工具直接生成，json转为go struct
 type RobotConf struct {

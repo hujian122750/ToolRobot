@@ -15,7 +15,6 @@ type LoginFSMState struct {
 }
 
 func (l *LoginFSMState) Enter() {
-	util.DebugLog("fpid:%s LoginFSMState Enter", l.player.GetFpid())
 	resp, error := l.player.SendRequest("call", "manifest", nil)
 	if error != nil {
 		return
@@ -35,7 +34,6 @@ func (l *LoginFSMState) Enter() {
 }
 
 func (l *LoginFSMState) Exit() {
-	util.DebugLog("fpid:%s LoginFSMState Exit", l.player.GetFpid())
 }
 
 func (l *LoginFSMState) parseManifest(resp map[string]interface{}) {

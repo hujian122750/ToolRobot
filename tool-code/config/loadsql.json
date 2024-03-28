@@ -1,8 +1,10 @@
 {
   "tablelist":[
+      "UserInfo",
       "UserHero",
       "UserRawRow",
       "UserRawRowExt",
-      "UserData"
+      "UserData",
+      "CityMap"
   ]
 }

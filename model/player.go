@@ -22,7 +22,7 @@ type Player struct {
 	restyC    *resty.Client
 }
 
-func (p *Player) Init(serverUrl string, userInfo *UserInfo) {
+func (p *Player) Init(serverUrl string, userInfo *util.UserInfo) {
 	p.LoginInfo.ServerUrl = serverUrl
 	p.Charactor.Fpid = userInfo.Fpid
 	p.restyC = resty.New()
