@@ -98,7 +98,7 @@ func TransferStruct(fileName string, obj *SqlSruct) {
 		if key == "self_type" {
 			realKey = "type"
 		}
-		file.WriteString(fmt.Sprintf("\t%s %s `json:\"%s\"`\n", key, value, realKey))
+		file.WriteString(fmt.Sprintf("\t%s %s `json:\"%s\"`\n", key, value, strings.ToLower(realKey)))
 	}
 
 	file.WriteString("}")

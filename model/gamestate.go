@@ -6,7 +6,10 @@
  */
 package model
 
-import "github.com/bench/tools/util"
+import (
+	"fmt"
+	"github.com/bench/tools/util"
+)
 
 // 游戏中状态
 type GameFSMState struct {
@@ -15,7 +18,7 @@ type GameFSMState struct {
 }
 
 func (g *GameFSMState) Enter() {
-
+	fmt.Println(g.player.Fpid)
 }
 
 func (g *GameFSMState) Exit() {

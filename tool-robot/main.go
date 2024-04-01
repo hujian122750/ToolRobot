@@ -14,7 +14,7 @@ import (
 	"sync"
 )
 
-var PlayerManager *model.PlayerManager
+//var PlayerManager *model.PlayerManager
 
 func main() {
 	const filepath = "config/robots.json"
@@ -25,16 +25,17 @@ func main() {
 		return
 	}
 
-	PlayerManager = new(model.PlayerManager)
-	PlayerManager.Init(len(rootCfg.Users))
+	//PlayerManager = new(model.PlayerManager)
+	//PlayerManager.Init(len(rootCfg.Users))
 
 	wg := sync.WaitGroup{}
+	wg.Add(len(rootCfg.Users))
 	for index := 0; index < len(rootCfg.Users); index++ {
 		go func(user *util.UserInfo) {
 			player := new(model.Player)
 			player.Init(rootCfg.ServerURL, user)
-			PlayerManager.AddWatchPlayer(player)
-			wg.Add(1)
+			//PlayerManager.AddWatchPlayer(player)
+
 		}(&rootCfg.Users[index])
 
 	}

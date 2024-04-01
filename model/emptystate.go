@@ -15,7 +15,7 @@ type EmptyFSMState struct {
 }
 
 func (e *EmptyFSMState) Enter() {
-	e.player.ChangeState(util.FSM_State_Login)
+
 }
 
 func (e *EmptyFSMState) Exit() {

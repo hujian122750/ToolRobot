@@ -7,10 +7,10 @@ package data
  * @Date: 2024/2/25 22:39
  */
 type UserDataModel struct {
-	Content map[string]interface{} `json:"Content"`
-	Ctime int64 `json:"Ctime"`
-	Mtime int64 `json:"Mtime"`
-	Uid int64 `json:"Uid"`
-	Id int64 `json:"Id"`
-	Value int64 `json:"Value"`
+	Content map[string]interface{} `json:"content"`
+	Ctime int64 `json:"ctime"`
+	Mtime int64 `json:"mtime"`
+	Uid int64 `json:"uid"`
+	Id int64 `json:"id"`
+	Value int64 `json:"value"`
 }

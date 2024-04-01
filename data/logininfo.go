@@ -8,5 +8,5 @@ package data
 
 type LoginInfo struct {
 	ServerUrl     string
-	ConfigVersion string
+	ConfigVersion int64
 }

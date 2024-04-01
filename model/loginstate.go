@@ -31,6 +31,7 @@ func (l *LoginFSMState) Enter() {
 	}
 
 	l.parseInit(resp)
+	l.player.ChangeState(util.FSM_State_Gameing)
 }
 
 func (l *LoginFSMState) Exit() {
@@ -47,7 +48,7 @@ func (l *LoginFSMState) parseManifest(resp map[string]interface{}) {
 		return
 	}
 
-	l.player.LoginInfo.ConfigVersion = appver["config_version"].(string)
+	l.player.LoginInfo.ConfigVersion, _ = appver["config_version"].(int64)
 }
 
 func (l *LoginFSMState) startInit() (map[string]interface{}, error) {

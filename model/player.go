@@ -20,11 +20,14 @@ type Player struct {
 	LoginInfo data.LoginInfo
 	fsm       *util.FSM
 	restyC    *resty.Client
+
+	state chan int
 }
 
 func (p *Player) Init(serverUrl string, userInfo *util.UserInfo) {
 	p.LoginInfo.ServerUrl = serverUrl
 	p.Charactor.Fpid = userInfo.Fpid
+	p.state = make(chan int)
 	p.restyC = resty.New()
 	//设置连接池
 	p.restyC.SetTransport(&http.Transport{
@@ -41,11 +44,26 @@ func (p *Player) Init(serverUrl string, userInfo *util.UserInfo) {
 	p.fsm.AddState(util.FSM_State_Login, &LoginFSMState{player: p})
 	p.fsm.AddState(util.FSM_State_Gameing, &GameFSMState{player: p})
 	p.fsm.AddState(util.FSM_State_Broken, &BrokenFSMState{player: p})
-	p.fsm.ChangeState(util.FSM_State_Empty)
+	p.ChangeState(util.FSM_State_Login)
+
+	ticker := time.NewTicker(time.Second)
+	for {
+		select {
+		case <-ticker.C:
+			p.Tick()
+		case s := <-p.state:
+			p.fsm.ChangeState(s)
+		}
+	}
 }
 
-func (p *Player) ChangeState(state int) bool {
-	return p.fsm.ChangeState(state)
+func (p *Player) Tick() {
+}
+
+func (p *Player) ChangeState(state int) {
+	go func() {
+		p.state <- state
+	}()
 }
 
 func (p *Player) SendRequest(class string, method string, params map[string]interface{}) (map[string]interface{}, error) {

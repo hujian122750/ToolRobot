@@ -68,6 +68,12 @@ func (f *FSM) AddState(key int, state IFSMState) {
 	f.states[key] = state
 }
 
+func (f *FSM) GetCurrentState() int {
+	f.mutex.RLock()
+	defer f.mutex.RUnlock()
+	return f.current_state
+}
+
 func (f *FSM) GetState(state int) IFSMState {
 	f.mutex.RLock()
 	defer f.mutex.RUnlock()
