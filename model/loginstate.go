@@ -6,7 +6,11 @@
  */
 package model
 
-import "github.com/bench/tools/util"
+import (
+	"encoding/json"
+	"github.com/bench/tools/util"
+	zap "github.com/openownworld/go-utils/log/zaplog"
+)
 
 // 登录状态
 type LoginFSMState struct {
@@ -15,6 +19,9 @@ type LoginFSMState struct {
 }
 
 func (l *LoginFSMState) Enter() {
+	zap.Info("LoginFSMState Enter,fpid=", l.player.GetFpid())
+
+	//请求call:manifest
 	resp, error := l.player.SendRequest("call", "manifest", nil)
 	if error != nil {
 		return
@@ -31,12 +38,16 @@ func (l *LoginFSMState) Enter() {
 	}
 
 	l.parseInit(resp)
+
+	//登录成功，切换到游戏中状态
 	l.player.ChangeState(util.FSM_State_Gameing)
 }
 
 func (l *LoginFSMState) Exit() {
+	zap.Info("LoginFSMState Exit,fpid=", l.player.GetFpid(), ",uid=", l.player.GetUid())
 }
 
+// 解析manifest的数据
 func (l *LoginFSMState) parseManifest(resp map[string]interface{}) {
 	payload, ok := resp["payload"].(map[string]interface{})
 	if !ok {
@@ -48,9 +59,10 @@ func (l *LoginFSMState) parseManifest(resp map[string]interface{}) {
 		return
 	}
 
-	l.player.LoginInfo.ConfigVersion, _ = appver["config_version"].(int64)
+	l.player.LoginInfo.ConfigVersion, _ = appver["config_version"].(float64)
 }
 
+// 请求call:init
 func (l *LoginFSMState) startInit() (map[string]interface{}, error) {
 	req := make(map[string]interface{})
 	req["os"] = "editor_ios"
@@ -84,5 +96,22 @@ func (l *LoginFSMState) startInit() (map[string]interface{}, error) {
 }
 
 func (l *LoginFSMState) parseInit(resp map[string]interface{}) {
+	//解析init的payload数据
+	payload, ok := resp["payload"].(map[string]interface{})
+	if !ok {
+		return
+	}
 
+	jsonData, err := json.Marshal(payload)
+	if err != nil {
+		return
+	}
+
+	err = json.Unmarshal([]byte(jsonData), &l.player.LoginInfo.InitInfo)
+	if err != nil {
+		return
+	}
+
+	//更新玩家的DB数据
+	l.player.UpdateDB(resp)
 }

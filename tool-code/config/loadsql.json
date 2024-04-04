@@ -1,10 +1,8 @@
 {
   "tablelist":[
-      "UserInfo",
-      "UserHero",
-      "UserRawRow",
-      "UserRawRowExt",
-      "UserData",
-      "CityMap"
+      ["UserInfo","user_info","object"],
+      ["UserRawRow","user_raw_row", "list"],
+      ["UserRawRowExt","user_raw_row_ext", "list"],
+      ["Job","job", "list"]
   ]
 }

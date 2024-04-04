@@ -7,8 +7,5 @@ const (
 )
 
 type Charactor struct {
-	Fpid   string
-	Uid    int32
-	Name   string
-	Status int16
+	Fpid string
 }

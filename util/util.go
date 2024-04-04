@@ -13,6 +13,7 @@ import (
 	"os"
 	"path"
 	"strings"
+	"time"
 	"unicode"
 )
 
@@ -48,7 +49,7 @@ func ParseCodeConfigFromJson(filepath string) *CodeConf {
 	return conf
 }
 
-func ParseSql(fileName string, sqlName string) (*SqlSruct, error) {
+func ParseSql(fileName string, sqlName string, tableName string, usetype string) (*SqlSruct, error) {
 	dataPath := path.Join(fileName, "sql/"+sqlName+".sql")
 
 	file, error := os.Open(dataPath)
@@ -57,6 +58,8 @@ func ParseSql(fileName string, sqlName string) (*SqlSruct, error) {
 	}
 
 	template := new(SqlSruct)
+	template.tablename = tableName
+	template.usetype = usetype
 	template.member = make(map[string]string)
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
@@ -88,20 +91,33 @@ func TransferStruct(fileName string, obj *SqlSruct) {
 
 	defer file.Close()
 
+	now := time.Now()
+	// 按照指定格式格式化时间
+	formatted := now.Format("2006/01/02 15:04:05")
 	//`json:"server_url"`
-	file.WriteString("package data\n\n")
 	file.WriteString("/**\n * @Author: hujian\n * @Description: " + strings.ToLower(obj.name) + "\n * @File: " + obj.name + "model.go\n * @Date: ")
-	file.WriteString("2024/2/25 22:39\n */\n")
+	file.WriteString(formatted + "\n */\n")
+	file.WriteString("package data\n\n")
 	file.WriteString(fmt.Sprintf("type %sModel struct {\n", obj.name))
+	index := 0
 	for key, value := range obj.member {
 		realKey := key
 		if key == "self_type" {
 			realKey = "type"
 		}
 		file.WriteString(fmt.Sprintf("\t%s %s `json:\"%s\"`\n", key, value, strings.ToLower(realKey)))
+		index++
+		if index == len(obj.member) && obj.usetype == "list" {
+			file.WriteString(fmt.Sprintf("\tNextptr *%sModel\n", obj.name))
+		}
 	}
 
-	file.WriteString("}")
+	file.WriteString("}\n\n")
+
+	//全部重写ModelName()
+	file.WriteString("func (" + strings.ToLower(string(obj.name[0])) + " *" + obj.name + "Model) ModelName() string {\n")
+	file.WriteString("\treturn \"" + obj.tablename + "\"\n")
+	file.WriteString("}\n\n")
 }
 
 func ParseStructName(str string) string {
@@ -114,6 +130,9 @@ func ParseStructMember(str string) (string, string) {
 	str = strings.TrimSpace(str)
 	slice := strings.Split(str, " ")
 	member := slice[0]
+	if member == "" {
+		return "", ""
+	}
 	if strings.Contains(strings.ToLower(member), "primary") ||
 		strings.Contains(strings.ToLower(member), "key") ||
 		strings.Contains(strings.ToLower(member), ")") {
@@ -130,7 +149,8 @@ func ParseStructMember(str string) (string, string) {
 	member = string(runes)
 
 	datatype := ""
-	switch strings.ToLower(slice[1]) {
+	lowerStr := strings.ToLower(slice[1])
+	switch lowerStr {
 	case "bigint":
 		datatype = "int32"
 	case "bigint(20)":
@@ -138,11 +158,13 @@ func ParseStructMember(str string) (string, string) {
 	case "timestamp":
 		datatype = "int64"
 	default:
-		if strings.Contains(slice[1], "varchar") {
+		if strings.Contains(lowerStr, "varchar") {
 			datatype = "string"
-		} else if strings.Contains(slice[1], "tinyint") {
+		} else if strings.Contains(lowerStr, "tinyint") {
 			datatype = "int8"
-		} else if strings.Contains(slice[1], "blob") {
+		} else if strings.Contains(lowerStr, "smallint") {
+			datatype = "int16"
+		} else if strings.Contains(lowerStr, "blob") {
 			datatype = "map[string]interface{}"
 		} else {
 			datatype = "string"

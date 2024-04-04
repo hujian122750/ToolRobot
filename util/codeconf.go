@@ -7,10 +7,15 @@
 package util
 
 type CodeConf struct {
-	Tables []string `json:"tablelist"`
+	Tables [][]string `json:"tablelist"`
+}
+
+type SqlTable struct {
 }
 
 type SqlSruct struct {
-	name   string
-	member map[string]string
+	name      string
+	tablename string
+	usetype   string
+	member    map[string]string
 }

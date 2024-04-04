@@ -7,8 +7,10 @@
 package main
 
 import (
+	"fmt"
 	"github.com/bench/tools/model"
 	"github.com/bench/tools/util"
+	zap "github.com/openownworld/go-utils/log/zaplog"
 	"path"
 	"runtime"
 	"sync"
@@ -17,9 +19,16 @@ import (
 //var PlayerManager *model.PlayerManager
 
 func main() {
-	const filepath = "config/robots.json"
 	_, fileName, _, _ := runtime.Caller(0)
-	dataPath := path.Join(path.Dir(fileName), filepath)
+	dataPath := path.Join(path.Dir(fileName), "config/log.ini")
+	//初始化日志
+	err := zap.InitLoggerFile(dataPath)
+	if err != nil {
+		fmt.Printf("InitLoggerFile error:%v", err)
+		return
+	}
+
+	dataPath = path.Join(path.Dir(fileName), "config/robots.json")
 	rootCfg := util.ParseRootConfigFromJson(dataPath)
 	if len(rootCfg.Users) == 0 {
 		return

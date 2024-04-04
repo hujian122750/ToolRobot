@@ -1,0 +1,132 @@
+{"level":"info","time":"2024-04-03T23:26:04.665+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-03T23:26:04.666+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-03T23:30:02.550+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-03T23:30:02.551+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-03T23:30:23.985+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-03T23:30:23.985+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-03T23:30:23.985+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-03T23:30:23.985+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-03T23:30:23.985+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-03T23:36:07.456+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-03T23:36:07.456+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-03T23:36:07.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-03T23:36:07.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-03T23:36:07.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-03T23:36:07.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-03T23:36:07.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-03T23:37:02.659+0800","caller":"model/loginstate.go:42","msg":"LoginFSMState Enter,fpid= 12343 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-03T23:44:30.951+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-03T23:44:30.952+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-03T23:44:30.953+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-03T23:44:30.953+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-03T23:44:30.953+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-03T23:44:30.953+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-03T23:44:30.953+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:03.857+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T00:38:03.858+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:03.859+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:03.859+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:03.859+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:03.859+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:03.860+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:06.345+0800","caller":"model/loginstate.go:44","msg":"LoginFSMState Enter,fpid= 12341 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:06.350+0800","caller":"model/loginstate.go:44","msg":"LoginFSMState Enter,fpid= 12344 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:06.417+0800","caller":"model/loginstate.go:44","msg":"LoginFSMState Enter,fpid= 12342 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:06.540+0800","caller":"model/loginstate.go:44","msg":"LoginFSMState Enter,fpid= 12340 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:06.650+0800","caller":"model/loginstate.go:44","msg":"LoginFSMState Enter,fpid= 12343 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:22.292+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T00:38:22.292+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:22.293+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:22.293+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:22.293+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:22.293+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T00:38:22.293+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T00:40:41.535+0800","caller":"model/loginstate.go:44","msg":"LoginFSMState Enter,fpid= 12340 ,uid= 0","service":"testService"}
+{"level":"info","time":"2024-04-04T00:41:55.699+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T00:41:55.700+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T00:41:55.700+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T00:41:55.700+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T00:41:55.700+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T00:41:55.701+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T00:41:55.701+0800","caller":"model/loginstate.go:23","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T00:44:54.000+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T00:44:54.001+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T00:44:54.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T00:44:54.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T00:44:54.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T00:44:54.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T00:44:54.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T00:45:01.726+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Enter,fpid= 12342 ,uid= &{{12342} {http://mc-master.kingsgroupgames.com/api/ 1.7121442577901e+13} {0x14000182000} 0x140001861b0 0x1400018e000 0x14000184000}","service":"testService"}
+{"level":"info","time":"2024-04-04T00:45:01.729+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Enter,fpid= 12341 ,uid= &{{12341} {http://mc-master.kingsgroupgames.com/api/ 1.7121442577901e+13} {0x140000222c0} 0x1400010e210 0x14000114000 0x14000024540}","service":"testService"}
+{"level":"info","time":"2024-04-04T00:45:01.729+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Enter,fpid= 12343 ,uid= &{{12343} {http://mc-master.kingsgroupgames.com/api/ 1.7121442577901e+13} {0x14000290000} 0x1400029c1b0 0x140002a4000 0x1400029a000}","service":"testService"}
+{"level":"info","time":"2024-04-04T00:45:01.729+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Enter,fpid= 12340 ,uid= &{{12340} {http://mc-master.kingsgroupgames.com/api/ 1.7121442577901e+13} {0x14000310000} 0x140003141b0 0x1400031c000 0x14000312000}","service":"testService"}
+{"level":"info","time":"2024-04-04T00:45:01.729+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Enter,fpid= 12344 ,uid= &{{12344} {http://mc-master.kingsgroupgames.com/api/ 1.7121442577901e+13} {0x140000aeb00} 0x140000a38c0 0x140000c1400 0x1400008e0c0}","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:36.178+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T00:46:36.178+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:36.179+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:36.179+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:36.179+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:36.179+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:36.179+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.593+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Exit,fpid= 12344 ,uid= 18779","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.594+0800","caller":"model/gamestate.go:21","msg":"GameFSMState Enter,fpid= 12344 ,uid= 18779","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.648+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Exit,fpid= 12340 ,uid= 18777","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.648+0800","caller":"model/gamestate.go:21","msg":"GameFSMState Enter,fpid= 12340 ,uid= 18777","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.678+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Exit,fpid= 12341 ,uid= 18781","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.678+0800","caller":"model/gamestate.go:21","msg":"GameFSMState Enter,fpid= 12341 ,uid= 18781","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.837+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Exit,fpid= 12342 ,uid= 18780","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.837+0800","caller":"model/gamestate.go:21","msg":"GameFSMState Enter,fpid= 12342 ,uid= 18780","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.856+0800","caller":"model/loginstate.go:43","msg":"LoginFSMState Exit,fpid= 12343 ,uid= 18778","service":"testService"}
+{"level":"info","time":"2024-04-04T00:46:38.856+0800","caller":"model/gamestate.go:21","msg":"GameFSMState Enter,fpid= 12343 ,uid= 18778","service":"testService"}
+{"level":"info","time":"2024-04-04T22:13:37.455+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T22:13:37.456+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T22:13:37.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T22:13:37.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T22:13:37.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T22:13:37.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T22:13:37.457+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T22:22:18.465+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T22:22:18.465+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T22:22:18.466+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T22:22:18.466+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T22:22:18.466+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T22:22:18.466+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T22:22:18.466+0800","caller":"model/loginstate.go:21","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T22:27:43.000+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T22:27:43.000+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T22:27:43.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T22:27:43.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T22:27:43.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T22:27:43.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T22:27:43.002+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T22:45:53.172+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T22:45:53.173+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T22:45:53.174+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T22:45:53.174+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T22:45:53.174+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T22:45:53.174+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T22:45:53.174+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T23:21:05.844+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T23:21:05.845+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T23:21:05.846+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T23:21:05.846+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T23:21:05.846+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T23:21:05.846+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T23:21:05.846+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T23:22:15.312+0800","caller":"model/player.go:159","msg":"[123 34 95 99 111 110 116 101 110 116 34 58 123 34 97 108 108 95 109 101 114 109 97 105 100 95 108 105 115 116 34 58 91 93 44 34 99 117 114 95 97 99 116 105 118 101 95 109 101 114 109 97 105 100 95 105 100 34 58 48 44 34 99 117 114 95 119 101 101 107 95 105 110 116 105 109 97 99 121 34 58 48 44 34 100 97 105 108 121 95 105 110 105 116 95 116 105 109 101 95 115 116 97 109 112 34 58 49 55 49 50 50 52 48 48 49 56 44 34 100 97 105 108 121 95 105 110 116 101 114 97 99 116 95 105 110 116 105 109 97 99 121 95 118 97 108 117 101 34 58 48 44 34 103 97 105 110 95 100 97 105 108 121 95 114 101 119 97 114 100 95 109 101 114 109 97 105 100 95 105 100 34 58 48 44 34 103 97 105 110 95 105 110 116 105 109 97 99 121 95 114 101 119 97 114 100 95 108 105 115 116 34 58 91 93 44 34 119 101 101 107 108 121 95 105 110 105 116 95 116 105 109 101 95 115 116 97 109 112 34 58 49 55 49 50 49 52 55 54 49 49 125 44 34 95 116 121 112 101 34 58 51 44 34 117 105 100 34 58 49 56 55 56 48 125]","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:06.215+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T23:33:06.216+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:06.217+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:06.217+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:06.217+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:06.217+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:06.217+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T23:33:25.093+0800","caller":"model/loginstate.go:47","msg":"LoginFSMState Exit,fpid= 12344 ,uid= 18779","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:04.383+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"error","time":"2024-04-04T23:47:04.383+0800","caller":"zaplog/zaplog.go:123","msg":"DefaultLogger init success [debug]","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:04.384+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12344","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:04.384+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12343","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:04.384+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12341","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:04.384+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12340","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:04.384+0800","caller":"model/loginstate.go:22","msg":"LoginFSMState Enter,fpid= 12342","service":"testService"}
+{"level":"info","time":"2024-04-04T23:47:44.431+0800","caller":"model/loginstate.go:47","msg":"LoginFSMState Exit,fpid= 12342 ,uid= 18780","service":"testService"}

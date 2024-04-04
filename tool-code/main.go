@@ -23,7 +23,7 @@ func main() {
 	}
 
 	for i := 0; i < len(codeCfg.Tables); i++ {
-		s, _ := util.ParseSql(pathstr, codeCfg.Tables[i])
+		s, _ := util.ParseSql(pathstr, codeCfg.Tables[i][0], codeCfg.Tables[i][1], codeCfg.Tables[i][2])
 		util.TransferStruct(pathstr, s)
 	}
 }

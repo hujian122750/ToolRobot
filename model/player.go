@@ -11,6 +11,7 @@ import (
 	"github.com/bench/tools/data"
 	"github.com/bench/tools/util"
 	"github.com/go-resty/resty/v2"
+	zap "github.com/openownworld/go-utils/log/zaplog"
 	"net/http"
 	"time"
 )
@@ -18,6 +19,7 @@ import (
 type Player struct {
 	Charactor
 	LoginInfo data.LoginInfo
+	DB        data.DBCache
 	fsm       *util.FSM
 	restyC    *resty.Client
 
@@ -27,6 +29,7 @@ type Player struct {
 func (p *Player) Init(serverUrl string, userInfo *util.UserInfo) {
 	p.LoginInfo.ServerUrl = serverUrl
 	p.Charactor.Fpid = userInfo.Fpid
+	p.DB.Init()
 	p.state = make(chan int)
 	p.restyC = resty.New()
 	//设置连接池
@@ -95,5 +98,71 @@ func (p *Player) GetFpid() string {
 }
 
 func (p *Player) GetUid() int32 {
-	return p.Uid
+	return p.DB.UserInfo.Uid
+}
+
+func (p *Player) GetToken() string {
+	return p.LoginInfo.InitInfo.Token
+}
+
+// 更新玩家的DB数据
+func (p *Player) UpdateDB(resp map[string]interface{}) {
+	data, ok := resp["data"].(map[string]interface{})
+	if !ok {
+		return
+	}
+
+	p.updateModel(data, p.DB.UserInfo)
+	p.updateModels(data, p.DB.UserRawRowList)
+}
+
+// 更新model数据
+func (p *Player) updateModel(data map[string]interface{}, model data.IBaseModel) {
+	modelInfo, ok := data[model.ModelName()].([]interface{})
+	if !ok {
+		return
+	}
+
+	mI, ok := modelInfo[0].(map[string]interface{})
+	if !ok {
+		return
+	}
+
+	jsonData, err := json.Marshal(mI)
+	if err != nil {
+		return
+	}
+
+	err = json.Unmarshal([]byte(jsonData), model)
+	if err != nil {
+		return
+	}
+}
+
+// 更新model数据
+func (p *Player) updateModels(data map[string]interface{}, header data.IBaseModel) {
+	modelInfo, ok := data[header.ModelName()].([]interface{})
+	if !ok {
+		return
+	}
+
+	for n := 0; n < len(modelInfo); n++ {
+		mI, ok := modelInfo[0].(map[string]interface{})
+		if !ok {
+			continue
+		}
+
+		jsonData, err := json.Marshal(mI)
+		if err != nil {
+			continue
+		}
+
+		zap.Info(jsonData)
+		//model := new(*reflect.TypeOf(header).Elem())
+		//err = json.Unmarshal([]byte(jsonData), model)
+		//if err != nil {
+		//	continue
+		//}
+	}
+
 }
