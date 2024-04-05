@@ -11,7 +11,6 @@ import (
 	"github.com/bench/tools/data"
 	"github.com/bench/tools/util"
 	"github.com/go-resty/resty/v2"
-	zap "github.com/openownworld/go-utils/log/zaplog"
 	"net/http"
 	"time"
 )
@@ -147,7 +146,7 @@ func (p *Player) updateModels(data map[string]interface{}, header data.IBaseMode
 	}
 
 	for n := 0; n < len(modelInfo); n++ {
-		mI, ok := modelInfo[0].(map[string]interface{})
+		mI, ok := modelInfo[n].(map[string]interface{})
 		if !ok {
 			continue
 		}
@@ -157,12 +156,12 @@ func (p *Player) updateModels(data map[string]interface{}, header data.IBaseMode
 			continue
 		}
 
-		zap.Info(jsonData)
-		//model := new(*reflect.TypeOf(header).Elem())
-		//err = json.Unmarshal([]byte(jsonData), model)
-		//if err != nil {
-		//	continue
-		//}
+		err = json.Unmarshal([]byte(jsonData), header)
+		if err != nil {
+			continue
+		}
+
+		header.UpdateModel()
 	}
 
 }

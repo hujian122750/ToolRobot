@@ -105,6 +105,10 @@ func TransferStruct(fileName string, obj *SqlSruct) {
 		if key == "self_type" {
 			realKey = "type"
 		}
+		if strings.HasPrefix(key, "_") {
+			key = "M" + key
+		}
+
 		file.WriteString(fmt.Sprintf("\t%s %s `json:\"%s\"`\n", key, value, strings.ToLower(realKey)))
 		index++
 		if index == len(obj.member) && obj.usetype == "list" {
@@ -114,9 +118,51 @@ func TransferStruct(fileName string, obj *SqlSruct) {
 
 	file.WriteString("}\n\n")
 
+	t := strings.ToLower(string(obj.name[0]))
 	//全部重写ModelName()
-	file.WriteString("func (" + strings.ToLower(string(obj.name[0])) + " *" + obj.name + "Model) ModelName() string {\n")
+	file.WriteString("func (" + t + " *" + obj.name + "Model) ModelName() string {\n")
 	file.WriteString("\treturn \"" + obj.tablename + "\"\n")
+	file.WriteString("}\n\n")
+
+	//全部重写UpdateModel()
+	file.WriteString("func (" + t + " *" + obj.name + "Model) UpdateModel() {\n")
+	if obj.usetype == "list" {
+		file.WriteString("\tcurrent := " + t + "\n")
+		file.WriteString("\tfor current.Nextptr != nil{\n")
+		file.WriteString(fmt.Sprintf("\t\tif current.Nextptr.IsEquals(%s){\n", t))
+		file.WriteString("\t\t\tmodel := *" + t + "\n")
+		file.WriteString("\t\t\tmodel.Nextptr = current.Nextptr.Nextptr\n")
+		file.WriteString("\t\t\tcurrent.Nextptr = &model\n")
+		file.WriteString("\t\t}else{\n")
+		file.WriteString("\t\t\tcurrent = current.Nextptr\n")
+		file.WriteString("\t\t}\n")
+		file.WriteString("\t}\n")
+		file.WriteString("\tif current.Nextptr == nil{\n")
+		file.WriteString("\t\tmodel := *" + t + "\n")
+		file.WriteString("\t\tmodel.Nextptr = nil\n")
+		file.WriteString("\t\tcurrent.Nextptr = &model\n")
+		file.WriteString("\t}\n")
+	}
+	file.WriteString("}\n\n")
+
+	//全部重写IsEquals()
+	file.WriteString("func (" + strings.ToLower(string(obj.name[0])) + " *" + obj.name + "Model) IsEquals(model IBaseModel) bool {\n")
+	if obj.usetype == "list" {
+		file.WriteString("\tobj,ok := model.(*" + obj.name + "Model)\n")
+		file.WriteString("\tif !ok{\n")
+		file.WriteString("\t\treturn false\n")
+		file.WriteString("\t}\n")
+		switch obj.tablename {
+		case "user_raw_row":
+			file.WriteString("\treturn u.Uid == obj.Uid && u.M_type == obj.M_type\n")
+		case "user_raw_row_ext":
+			file.WriteString("\treturn u.Uid == obj.Uid && u.M_type == obj.M_type && u.M_sub_type == obj.M_sub_type\n")
+		default:
+			file.WriteString("\treturn obj == nil\n")
+		}
+	} else {
+		file.WriteString("\treturn false\n")
+	}
 	file.WriteString("}\n\n")
 }
 
@@ -152,6 +198,8 @@ func ParseStructMember(str string) (string, string) {
 	lowerStr := strings.ToLower(slice[1])
 	switch lowerStr {
 	case "bigint":
+		fallthrough
+	case "int":
 		datatype = "int32"
 	case "bigint(20)":
 		datatype = "int64"
