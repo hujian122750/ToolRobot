@@ -9,6 +9,7 @@ package data
 type LoginInfo struct {
 	ServerUrl     string
 	ConfigVersion float64
+	Seq           int64
 	InitInfo      LoginInitInfo
 }
 

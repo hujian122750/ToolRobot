@@ -33,6 +33,22 @@ func ParseRootConfigFromJson(filepath string) *RobotConf {
 	return conf
 }
 
+func ParseGmConfigFromJson(filepath string) *GmConf {
+	file, error := os.Open(filepath)
+	if error != nil {
+		panic(fmt.Sprintf("open %s error,%v", filepath, error))
+	}
+
+	defer file.Close()
+
+	conf := new(GmConf)
+	error = json.NewDecoder(file).Decode(conf)
+	if error != nil {
+		panic(fmt.Sprintf("load %s error,%v", filepath, error))
+	}
+	return conf
+}
+
 func ParseCodeConfigFromJson(filepath string) *CodeConf {
 	file, error := os.Open(filepath)
 	if error != nil {
@@ -157,6 +173,8 @@ func TransferStruct(fileName string, obj *SqlSruct) {
 			file.WriteString("\treturn u.Uid == obj.Uid && u.M_type == obj.M_type\n")
 		case "user_raw_row_ext":
 			file.WriteString("\treturn u.Uid == obj.Uid && u.M_type == obj.M_type && u.M_sub_type == obj.M_sub_type\n")
+		case "user_city":
+			file.WriteString("\treturn u.Uid == obj.Uid && u.City_id == obj.City_id\n")
 		default:
 			file.WriteString("\treturn obj == nil\n")
 		}
@@ -201,13 +219,15 @@ func ParseStructMember(str string) (string, string) {
 		fallthrough
 	case "int":
 		datatype = "int32"
+	case "mediumint":
+		datatype = "int16"
 	case "bigint(20)":
 		datatype = "int64"
 	case "timestamp":
-		datatype = "int64"
+		datatype = "float64"
 	default:
 		if strings.Contains(lowerStr, "varchar") {
-			datatype = "string"
+			datatype = "interface{}"
 		} else if strings.Contains(lowerStr, "tinyint") {
 			datatype = "int8"
 		} else if strings.Contains(lowerStr, "smallint") {

@@ -3,6 +3,11 @@
       ["UserInfo","user_info","object"],
       ["UserRawRow","user_raw_row", "list"],
       ["UserRawRowExt","user_raw_row_ext", "list"],
-      ["Job","job", "list"]
+      ["Job","job", "list"],
+      ["UserCity","user_city", "list"]
+  ],
+  "interfacelist":[
+    "Activity:getIntegralActivityState",
+    "ActivityCenter:getConfig"
   ]
 }

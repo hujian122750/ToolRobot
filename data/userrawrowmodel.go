@@ -2,7 +2,7 @@
  * @Author: hujian
  * @Description: userrawrow
  * @File: UserRawRowmodel.go
- * @Date: 2024/04/06 00:15:29
+ * @Date: 2024/04/07 20:41:36
  */
 package data
 
@@ -10,8 +10,8 @@ type UserRawRowModel struct {
 	Uid int32 `json:"uid"`
 	M_type int32 `json:"_type"`
 	M_content map[string]interface{} `json:"_content"`
-	Mtime int64 `json:"mtime"`
-	Ctime int64 `json:"ctime"`
+	Mtime float64 `json:"mtime"`
+	Ctime float64 `json:"ctime"`
 	Nextptr *UserRawRowModel
 }
 

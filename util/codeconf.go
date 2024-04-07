@@ -6,11 +6,11 @@
  */
 package util
 
-type CodeConf struct {
-	Tables [][]string `json:"tablelist"`
-}
+var TableConfig *CodeConf
 
-type SqlTable struct {
+type CodeConf struct {
+	Tables     [][]string `json:"tablelist"`
+	Interfaces []string   `json:"interfacelist"`
 }
 
 type SqlSruct struct {

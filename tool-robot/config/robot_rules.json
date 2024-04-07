@@ -1,5 +1,12 @@
 {
   "gm_command": [
-    ""
+    {
+      "cmd": "prophase:addResource",
+      "cmd_params": []
+    },
+    {
+      "cmd": "prophase:allBuildingFullLevel",
+      "cmd_params": ["26"]
+    }
   ]
 }

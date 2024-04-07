@@ -9,11 +9,14 @@ package data
 type DBCache struct {
 	//UserInfo数据
 	UserInfo *UserInfoModel
+	//UserCity数据
+	UserCityModelList *UserCityModel
 	//UserRawRow数据
 	UserRawRowList *UserRawRowModel
 }
 
 func (d *DBCache) Init() {
 	d.UserInfo = new(UserInfoModel)
+	d.UserCityModelList = new(UserCityModel)
 	d.UserRawRowList = new(UserRawRowModel)
 }

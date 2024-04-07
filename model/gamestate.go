@@ -19,6 +19,7 @@ type GameFSMState struct {
 
 func (g *GameFSMState) Enter() {
 	zap.Info("GameFSMState Enter,fpid=", g.player.GetFpid(), ",uid=", g.player.GetUid())
+	g.player.GmCommand()
 }
 
 func (g *GameFSMState) Exit() {

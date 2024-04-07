@@ -1,0 +1,917 @@
+{
+  "payload": {
+    "integral_config": [],
+    "knight_activity": {
+      "id": "150600002",
+      "start": "1712620800",
+      "current_activity_id": "1",
+      "items": "{\"1\":{\"id\":\"1\",\"interval\":\"0.5\",\"next_id\":\"2\"},\"2\":{\"id\":\"2\",\"interval\":\"10.5\",\"next_id\":\"1\"}}",
+      "config_id": "6",
+      "end": "1712793600",
+      "job_id": "1843301",
+      "activity_id": 10800002,
+      "history": {
+        "user_history": [{
+          "1711957517": ["[Pob]Lord#vfQYRwu2HB", "[Pob]bigfly", "[Pob]Lord#178283c58", "[Pob]200000072411", "[Pob]2.23", "[Pob]Lord#17a13dcf3", "[Pob]\u5361\u5361\u5361", "[Pob]Lord#178283d58", "[Pob]Lord#178283f6a", "[Pob]Lord#17a13dbed"]
+        }, {
+          "1669361006": ["[nsu]Lord#27cba36e1"]
+        }, {
+          "1667260800": ["[ozr]228515", "[ozr]228517"]
+        }],
+        "alliance_history": [{
+          "1711957517": ["[Pob]new"]
+        }, {
+          "1669361006": ["[nsu]\u54e6\u54e6\u54e6"]
+        }, {
+          "1667260800": ["[ozr]aaa777"]
+        }]
+      },
+      "score_and_rank": []
+    },
+    "kingdom_war_activity": {
+      "group_kingdoms": [{
+        "world_id": 1,
+        "king_uid": 0,
+        "name": "\u5440\u62c9\u9501\u8036?",
+        "flag": 81,
+        "state": "prepare",
+        "sub_state": "normal",
+        "protected_end_time": 1712115754,
+        "state_change_time": 1712606400,
+        "sub_state_change_time": 1414368000,
+        "is_in_world_war": 1
+      }, {
+        "world_id": 3,
+        "king_uid": 0,
+        "name": "",
+        "flag": 0,
+        "state": "prepare",
+        "sub_state": "normal",
+        "protected_end_time": 1712115754,
+        "state_change_time": 1712606400,
+        "sub_state_change_time": 1414368000,
+        "is_in_world_war": 1
+      }],
+      "pre_match_kingdoms": [{
+        "world_id": 1,
+        "king_uid": 0,
+        "name": "\u5440\u62c9\u9501\u8036?",
+        "flag": 81,
+        "state": "prepare",
+        "sub_state": "normal",
+        "protected_end_time": 1712115754,
+        "state_change_time": 1712606400,
+        "sub_state_change_time": 1414368000,
+        "is_in_world_war": 1,
+        "star": 0
+      }, {
+        "world_id": 3,
+        "king_uid": 0,
+        "name": "",
+        "flag": 0,
+        "state": "prepare",
+        "sub_state": "normal",
+        "protected_end_time": 1712115754,
+        "state_change_time": 1712606400,
+        "sub_state_change_time": 1414368000,
+        "is_in_world_war": 1,
+        "star": null
+      }],
+      "is_in_world_war": 1,
+      "next_war_time": "1713325324",
+      "next_divide_time": "1713325324",
+      "has_user_score_rewards": false,
+      "act_version": "cv_last",
+      "act_version_offset_s": 376,
+      "fight_start_time": 1712577600,
+      "chat_channel": 38278964846018561,
+      "activity_id": 379,
+      "self_num": 0,
+      "other_num": 0,
+      "current_stage_id": "222500005",
+      "open_king_hall": 0
+    },
+    "world_boss": {
+      "start_time": "1713571200",
+      "end_time": "1713657600",
+      "duration": "86400",
+      "singleLoopTimes": "0",
+      "id": "43000077",
+      "rank_id": "480",
+      "total_score": "246891",
+      "time": 0
+    },
+    "lord_time_limit_activity": null,
+    "ava_1v1": {
+      "match_type": 0,
+      "season_id": 0,
+      "conf": {
+        "state": "1",
+        "start_time": 1712470252,
+        "end_time": 1712477252,
+        "can_join": 0,
+        "rounds": {
+          "1": {
+            "state": 4,
+            "register_start_time": 1712470252,
+            "register_end_time": 1712470452,
+            "open_time": 1712470472,
+            "start_time": 1712470492,
+            "end_time": 1712476492
+          }
+        }
+      }
+    },
+    "st_ava_1v1": {
+      "match_type": 0,
+      "season_id": 1711895571,
+      "conf": {
+        "state": "1",
+        "start_time": 1711895571,
+        "end_time": 1712595571,
+        "can_join": 0,
+        "rounds": {
+          "1": {
+            "state": 4,
+            "register_start_time": 1711895571,
+            "register_end_time": 1711895871,
+            "open_time": 1711895891,
+            "start_time": 1711895911,
+            "end_time": 1712495911
+          }
+        }
+      }
+    },
+    "royal_championships": {
+      "conf": {
+        "op": "end",
+        "id": 237700008,
+        "season_id": 237700008,
+        "region_id": 1,
+        "start_time": 1711959009,
+        "end_time": 1714521600,
+        "show_time": 1714521600,
+        "city_level": "7"
+      },
+      "challenge_list": {
+        "1237300076": {
+          "slots": {
+            "1": {
+              "legends": {
+                "1": 109600435,
+                "2": 109600436
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600435,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600436,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "2": {
+              "legends": {
+                "1": 109600437,
+                "2": 109600438
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600437,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600438,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "3": {
+              "legends": {
+                "1": 109600439,
+                "2": 109600440
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600439,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600440,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            }
+          },
+          "user_info": {
+            "uid": 1237300076,
+            "icon": "Texture\/Hero\/Portrait_Icon\/player_portrait_icon_2",
+            "portrait": "Texture\/Hero\/player_portrait_2",
+            "name": "npc_bronze_1_1_name",
+            "lord_level": 5,
+            "city_level": 5,
+            "rank": 1,
+            "score": 1000
+          },
+          "win": 0,
+          "is_hidden": 0
+        },
+        "1237300079": {
+          "slots": {
+            "1": {
+              "legends": {
+                "1": 109600435,
+                "2": 109600436
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600435,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600436,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "2": {
+              "legends": {
+                "1": 109600437,
+                "2": 109600438
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600437,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600438,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "3": {
+              "legends": {
+                "1": 109600439,
+                "2": 109600440
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600439,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600440,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            }
+          },
+          "user_info": {
+            "uid": 1237300079,
+            "icon": "Texture\/Hero\/Portrait_Icon\/player_portrait_icon_2",
+            "portrait": "Texture\/Hero\/player_portrait_2",
+            "name": "npc_bronze_1_1_name",
+            "lord_level": 5,
+            "city_level": 5,
+            "rank": 1,
+            "score": 1000
+          },
+          "win": 0,
+          "is_hidden": 0
+        },
+        "1237300078": {
+          "slots": {
+            "1": {
+              "legends": {
+                "1": 109600435,
+                "2": 109600436
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600435,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600436,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "2": {
+              "legends": {
+                "1": 109600437,
+                "2": 109600438
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600437,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600438,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "3": {
+              "legends": {
+                "1": 109600439,
+                "2": 109600440
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600439,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600440,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            }
+          },
+          "user_info": {
+            "uid": 1237300078,
+            "icon": "Texture\/Hero\/Portrait_Icon\/player_portrait_icon_2",
+            "portrait": "Texture\/Hero\/player_portrait_2",
+            "name": "npc_bronze_1_1_name",
+            "lord_level": 5,
+            "city_level": 5,
+            "rank": 1,
+            "score": 1000
+          },
+          "win": 0,
+          "is_hidden": 0
+        },
+        "1237300075": {
+          "slots": {
+            "1": {
+              "legends": {
+                "1": 109600435,
+                "2": 109600436
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600435,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600436,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "2": {
+              "legends": {
+                "1": 109600437,
+                "2": 109600438
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600437,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600438,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "3": {
+              "legends": {
+                "1": 109600439,
+                "2": 109600440
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600439,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600440,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            }
+          },
+          "user_info": {
+            "uid": 1237300075,
+            "icon": "Texture\/Hero\/Portrait_Icon\/player_portrait_icon_2",
+            "portrait": "Texture\/Hero\/player_portrait_2",
+            "name": "npc_bronze_1_1_name",
+            "lord_level": 5,
+            "city_level": 5,
+            "rank": 1,
+            "score": 1000
+          },
+          "win": 0,
+          "is_hidden": 0
+        },
+        "1237300077": {
+          "slots": {
+            "1": {
+              "legends": {
+                "1": 109600435,
+                "2": 109600436
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600435,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600436,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "2": {
+              "legends": {
+                "1": 109600437,
+                "2": 109600438
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600437,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600438,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            },
+            "3": {
+              "legends": {
+                "1": 109600439,
+                "2": 109600440
+              },
+              "troops": {
+                "infantry_t1": 100,
+                "ranged_t1": 100,
+                "cavalry_t1": 100
+              },
+              "legend_infos": {
+                "1": {
+                  "legend_id": 109600439,
+                  "star": 3,
+                  "level": 1
+                },
+                "2": {
+                  "legend_id": 109600440,
+                  "star": 3,
+                  "level": 1
+                }
+              }
+            }
+          },
+          "user_info": {
+            "uid": 1237300077,
+            "icon": "Texture\/Hero\/Portrait_Icon\/player_portrait_icon_2",
+            "portrait": "Texture\/Hero\/player_portrait_2",
+            "name": "npc_bronze_1_1_name",
+            "lord_level": 5,
+            "city_level": 5,
+            "rank": 1,
+            "score": 1000
+          },
+          "win": 0,
+          "is_hidden": 0
+        }
+      },
+      "self_info": {
+        "name": "Lord#27c9659a6",
+        "icon": "",
+        "lord_title": 0,
+        "portrait": "10001",
+        "acronym": "",
+        "symbol_code": 0,
+        "kid": 1,
+        "city_level": 25,
+        "uid": 1059,
+        "rank": 1,
+        "score": 1000
+      },
+      "challenge_info": {
+        "can_fetch": 15,
+        "last": 5,
+        "free": 1,
+        "gold": 1,
+        "gold5000": 1,
+        "charge": 0
+      }
+    },
+    "season_ticket": null,
+    "kings_road": null,
+    "kingdom_revival": [],
+    "gold_box_2": null,
+    "astrology": null,
+    "strength_prove": {
+      "start_time": 1711929600,
+      "end_time": 1712707200,
+      "group_id": 80600003,
+      "kingdom_id": 1,
+      "season_id": 1711939602,
+      "paused": false,
+      "job_id": 1842757,
+      "super_reward_times": {
+        "80700044": "3",
+        "80700052": "5",
+        "80700074": "3",
+        "80700082": "2"
+      }
+    },
+    "cross_kingdom_coin": [],
+    "dragon_treasure": {
+      "start_time": "1711436700",
+      "end_time": "1714115100",
+      "act_type": "1",
+      "city_level": "1",
+      "reward_template": "2-9",
+      "server": "1",
+      "season": "1711436800",
+      "item_id": "6002575",
+      "skin_id": "87200001",
+      "pause": "0"
+    },
+    "army_preparetion": [],
+    "Alliance_Charge": null,
+    "Alliance_Charge_2": null,
+    "item_recycle": null,
+    "rolling_wheel": null,
+    "activity_tarotcard": [],
+    "flash_sale": [{
+      "conf": {
+        "name": "flash_sale",
+        "temp_close_type": 0,
+        "id": 1689223909,
+        "activity_id": 174100011,
+        "city_level": 8,
+        "start_time": 1689223920,
+        "end_time": 1689292800
+      },
+      "flash_sale_products": []
+    }, {
+      "conf": {
+        "name": "flash_sale",
+        "temp_close_type": 0,
+        "id": 1706263396,
+        "activity_id": 174100032,
+        "city_level": 10,
+        "start_time": 1706263410,
+        "end_time": 1706349810
+      },
+      "flash_sale_products": []
+    }, {
+      "conf": {
+        "name": "flash_sale",
+        "temp_close_type": 0,
+        "id": 1709519424,
+        "activity_id": 174100003,
+        "city_level": 10,
+        "start_time": 1709519444,
+        "end_time": 1709605844
+      },
+      "flash_sale_products": []
+    }],
+    "skin_lottery": null,
+    "fruit_machine": {
+      "187700001": {
+        "name": "fruit_machine",
+        "temp_close_type": 0,
+        "id": 1693489733,
+        "activity_id": 187700001,
+        "city_level": 1,
+        "start_time": 1693489832,
+        "end_time": 1693835312
+      }
+    },
+    "legend_select_recruit": [],
+    "legend_select_recruit_2": [],
+    "alliance_fragment_exchange": {
+      "190400002": {
+        "name": "alliance_fragment_exchange",
+        "temp_close_type": 0,
+        "id": 1638514282,
+        "activity_id": 190400002,
+        "city_level": 10,
+        "start_time": 1638514369,
+        "end_time": 1640242249
+      },
+      "190400001": {
+        "name": "alliance_fragment_exchange",
+        "temp_close_type": 0,
+        "id": 1706519184,
+        "activity_id": 190400001,
+        "city_level": 1,
+        "start_time": 1706519223,
+        "end_time": 1709197563
+      }
+    },
+    "monopoly": [],
+    "ava_league": null,
+    "generals_trial": null,
+    "turntable": null,
+    "go_gog": [],
+    "knock_grid": [],
+    "black_friday": [],
+    "event_monster_new": {
+      "213300001": {
+        "name": "captain_ghost",
+        "temp_close_type": 0,
+        "id": 1711956744,
+        "activity_id": 213300001,
+        "city_level": 1,
+        "start_time": 1711956778,
+        "end_time": 1712561518,
+        "season_id": 1711956744,
+        "ip_white_list": 0,
+        "ranks": [{
+          "allianceId": 380,
+          "rank": 1,
+          "score": 2,
+          "name": "new",
+          "kid": 1,
+          "acronym": "Pob",
+          "time": 1711959639
+        }],
+        "self": {
+          "alliance_rank": 10000,
+          "kill_times": 0
+        }
+      }
+    },
+    "ruins_fight": null,
+    "pan": {
+      "conf": [],
+      "rank": []
+    },
+    "karulak": null,
+    "dynamic_roulette": [],
+    "activity_clue": {
+      "name": "paid_daily",
+      "temp_close_type": 0,
+      "id": 1712455710,
+      "activity_id": 251900005,
+      "city_level": 1,
+      "start_time": 1712455745,
+      "end_time": 1712714945
+    },
+    "power_battle": [],
+    "all_star": {
+      "season_id": 24,
+      "season_pk": 253100001,
+      "stage_pk": 253400001,
+      "start_time": 1709111520,
+      "end_time": 1711444320,
+      "match_start_time": 1710270720
+    },
+    "activity_lottery": null,
+    "continual_pay": null,
+    "poseidon_treasure": null,
+    "payment_return_new": null,
+    "desirable_gift": null,
+    "trail_tower": {
+      "daily_conf": {
+        "open_time": 1667779200,
+        "rank_refresh_time": 1712534400,
+        "boss_level_id": 263000011,
+        "max_level_id": 263000104
+      },
+      "main_conf": {
+        "max_group_id": 262600009
+      }
+    },
+    "self_wonder_war_open": [],
+    "am": {
+      "conf": {
+        "start_time": 1704766215,
+        "season_id": 1704766215,
+        "group_time": 1704766218,
+        "task_time": 1704766219,
+        "publish_time": 1704766500,
+        "end_time": 1705025700,
+        "kid": 0,
+        "act_group_id": 161300002
+      },
+      "status": 1,
+      "alliance_score": 0,
+      "alliance_rank": 0,
+      "score": 0,
+      "rank": 0,
+      "act_group_id": 161300002,
+      "milestone_alliance_reward_ids": [],
+      "milestone_reward_ids": [],
+      "final_rewarded": 0,
+      "last_am_level": 0,
+      "am_level": 0,
+      "combine_alliance_id": 0,
+      "combine_alliance_name": "",
+      "quest": [],
+      "act_version": "cv_last",
+      "act_version_offset_s": 291
+    }
+  },
+  "data": {
+    "set": {
+      "royal_championships": [{
+        "uid": 1059,
+        "season_id": 237700008,
+        "score": 1000,
+        "rank": 1,
+        "defend_data": [],
+        "defend_benefits": [],
+        "season_refresh_time": 1695368110,
+        "challenge_results": [],
+        "refresh_times": 5,
+        "challenge_times": 5,
+        "last_login_time": 1712471402,
+        "last_daily_time": 0,
+        "last_n_day_info": {
+          "1712448000": {
+            "can_fetch": 15,
+            "last": 5,
+            "free": 1,
+            "gold": 1,
+            "gold5000": 1,
+            "charge": 0
+          }
+        },
+        "last_season_time": 1691648326,
+        "is_hidden": 0,
+        "region_id": 1,
+        "last_score": 1000,
+        "challenge_lineup": []
+      }],
+      "strength_prove": [{
+        "uid": 1059,
+        "season_id": 1711939602,
+        "stage": 15,
+        "progress": [180971003],
+        "rewarded": []
+      }, {
+        "progress": [180971003],
+        "uid": 1059
+      }],
+      "user_raw_row_ext": [{
+        "uid": 1059,
+        "_type": 16,
+        "_sub_type": 213300001,
+        "_content": {
+          "act_id": 213300001,
+          "s_id": 1711956744,
+          "t": 1712471404,
+          "ts": 0,
+          "ds": 0,
+          "dr": []
+        }
+      }, {
+        "uid": 1059,
+        "_type": 48,
+        "_sub_type": 251900005,
+        "_content": {
+          "id": 1712455710,
+          "rewardLog": [],
+          "isBought": 0,
+          "lastResetDate": 1712455745
+        }
+      }],
+      "user_raw_row": [{
+        "uid": 1059,
+        "_type": 66,
+        "_content": {
+          "main_data": {
+            "level_id": 0,
+            "challenge_num": "3",
+            "rewards": [],
+            "do_like": [],
+            "challenge_lineup": []
+          },
+          "daily_data": {
+            "level_id": 0,
+            "damage": 0,
+            "max_level_id": 0,
+            "max_damage": 0,
+            "yesterday_level_id": 0,
+            "do_like": [],
+            "challenge_lineup": [],
+            "challenge_start_troops": [],
+            "today_over": 0,
+            "today_wave": 1,
+            "chosen_rogue_list": [],
+            "last_choose_level_id": 0,
+            "cur_choose_list": [],
+            "special_effects": {
+              "quick_win_num": 0,
+              "piece_num": 0
+            },
+            "effects": []
+          }
+        }
+      }]
+    }
+  },
+  "time": 1712471646727,
+  "ok": 1
+}

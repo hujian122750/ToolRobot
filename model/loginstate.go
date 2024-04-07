@@ -113,5 +113,7 @@ func (l *LoginFSMState) parseInit(resp map[string]interface{}) {
 	}
 
 	//更新玩家的DB数据
-	l.player.UpdateDB(resp)
+	l.player.UpdateDB(resp, Model_Init)
+
+	l.player.LoginInfo.Seq = 1
 }
