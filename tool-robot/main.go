@@ -12,12 +12,11 @@ import (
 	"github.com/bench/tools/util"
 	"github.com/gin-gonic/gin"
 	zap "github.com/openownworld/go-utils/log/zaplog"
+	"net/http"
 	"path"
 	"runtime"
 	"sync"
 )
-
-//var PlayerManager *model.PlayerManager
 
 func main() {
 	_, fileName, _, _ := runtime.Caller(0)
@@ -38,17 +37,21 @@ func main() {
 	dataPath = path.Join(path.Dir(fileName), "config/robot_rules.json")
 	util.GmCfg = util.ParseGmConfigFromJson(dataPath)
 
+	model.PlayerMgr = new(model.PlayerManager)
+	model.PlayerMgr.Init(len(util.RobotCfg.Users))
+
 	go func() {
 		g := gin.Default()
+		//g.SetFuncMap(template.FuncMap{
+		//	"upper": strings.ToUpper,
+		//})
+		//g.LoadHTMLGlob("templates/*.html")
 		g.GET("/get_players", func(ctx *gin.Context) {
-			ctx.JSON(200, map[string]any{"method": "get_players"})
+			ctx.HTML(http.StatusOK, "get_players.html", nil)
 		})
 
 		g.Run(":8082")
 	}()
-
-	//PlayerManager = new(model.PlayerManager)
-	//PlayerManager.Init(len(rootCfg.Users))
 
 	wg := sync.WaitGroup{}
 	wg.Add(len(util.RobotCfg.Users))
@@ -56,7 +59,6 @@ func main() {
 		go func(user *util.UserInfo) {
 			player := new(model.Player)
 			player.Init(util.RobotCfg.ServerURL, user)
-			//PlayerManager.AddWatchPlayer(player)
 
 		}(&util.RobotCfg.Users[index])
 

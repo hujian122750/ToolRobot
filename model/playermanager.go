@@ -8,6 +8,8 @@ package model
 
 import "sync"
 
+var PlayerMgr *PlayerManager
+
 type PlayerManager struct {
 	mutex sync.Mutex
 	//登录进来的玩家列表

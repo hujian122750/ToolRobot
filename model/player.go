@@ -56,6 +56,7 @@ func (p *Player) Init(serverUrl string, userInfo *util.UserInfo) {
 	p.fsm.AddState(util.FSM_State_Broken, &BrokenFSMState{player: p})
 	p.ChangeState(util.FSM_State_Login)
 
+	PlayerMgr.AddWatchPlayer(p)
 	ticker := time.NewTicker(time.Second)
 	for {
 		select {
