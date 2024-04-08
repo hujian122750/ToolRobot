@@ -1,0 +1,103 @@
+{
+  "payload": {
+    "activity_center": {
+      "config_id": "159500015",
+      "start_time": 0,
+      "end_time": 2493072000,
+      "name": "activity_center",
+      "icon_config_id": 0,
+      "list": {
+        "160000133": {
+          "t1": 1712130242,
+          "t2": 1712130242,
+          "t3": 1712562302,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        }
+      },
+      "list_multiple": {
+        "182300184": {
+          "t1": 1695299220,
+          "t2": 1695299220,
+          "t3": 1695385578,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300189": {
+          "t1": 1691133854,
+          "t2": 1691133854,
+          "t3": 1691220254,
+          "level": 8,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300231": {
+          "t1": 1694067360,
+          "t2": 1694067360,
+          "t3": 1694931325,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300232": {
+          "t1": 1693472890,
+          "t2": 1693472890,
+          "t3": 1696151230,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300294": {
+          "t1": 1711006860,
+          "t2": 1711006860,
+          "t3": 1711870812,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300245": {
+          "t1": 1698744883,
+          "t2": 1698744883,
+          "t3": 1699176823,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300249": {
+          "t1": 1700102801,
+          "t2": 1700102801,
+          "t3": 1700448280,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        },
+        "182300255": {
+          "t1": 1701349670,
+          "t2": 1701349670,
+          "t3": 1703941635,
+          "level": 1,
+          "act_version": 0,
+          "act_version_offset_s": 0
+        }
+      }
+    },
+    "reindeer2": {
+      "template_name": "Reindeer2Conf",
+      "id": 1712130209,
+      "activity_id": 149000010,
+      "name": "reindeer2",
+      "city_level": 1,
+      "start_time": 1712130242,
+      "end_time": 1712562242,
+      "publicity_time": 1712562302,
+      "next_refresh_time": 1712534400,
+      "my_score": 0,
+      "my_step": 1,
+      "is_red": 1
+    }
+  },
+  "time": 1712471651579,
+  "ok": 1
+}

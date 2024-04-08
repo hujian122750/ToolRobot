@@ -13,6 +13,7 @@ import (
 	"os"
 	"path"
 	"strings"
+	"time"
 	"unicode"
 )
 
@@ -25,6 +26,22 @@ func ParseRootConfigFromJson(filepath string) *RobotConf {
 	defer file.Close()
 
 	conf := new(RobotConf)
+	error = json.NewDecoder(file).Decode(conf)
+	if error != nil {
+		panic(fmt.Sprintf("load %s error,%v", filepath, error))
+	}
+	return conf
+}
+
+func ParseGmConfigFromJson(filepath string) *GmConf {
+	file, error := os.Open(filepath)
+	if error != nil {
+		panic(fmt.Sprintf("open %s error,%v", filepath, error))
+	}
+
+	defer file.Close()
+
+	conf := new(GmConf)
 	error = json.NewDecoder(file).Decode(conf)
 	if error != nil {
 		panic(fmt.Sprintf("load %s error,%v", filepath, error))
@@ -48,7 +65,7 @@ func ParseCodeConfigFromJson(filepath string) *CodeConf {
 	return conf
 }
 
-func ParseSql(fileName string, sqlName string) (*SqlSruct, error) {
+func ParseSql(fileName string, sqlName string, tableName string, usetype string) (*SqlSruct, error) {
 	dataPath := path.Join(fileName, "sql/"+sqlName+".sql")
 
 	file, error := os.Open(dataPath)
@@ -57,6 +74,8 @@ func ParseSql(fileName string, sqlName string) (*SqlSruct, error) {
 	}
 
 	template := new(SqlSruct)
+	template.tablename = tableName
+	template.usetype = usetype
 	template.member = make(map[string]string)
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
@@ -88,20 +107,81 @@ func TransferStruct(fileName string, obj *SqlSruct) {
 
 	defer file.Close()
 
+	now := time.Now()
+	// 按照指定格式格式化时间
+	formatted := now.Format("2006/01/02 15:04:05")
 	//`json:"server_url"`
-	file.WriteString("package data\n\n")
 	file.WriteString("/**\n * @Author: hujian\n * @Description: " + strings.ToLower(obj.name) + "\n * @File: " + obj.name + "model.go\n * @Date: ")
-	file.WriteString("2024/2/25 22:39\n */\n")
+	file.WriteString(formatted + "\n */\n")
+	file.WriteString("package data\n\n")
 	file.WriteString(fmt.Sprintf("type %sModel struct {\n", obj.name))
+	index := 0
 	for key, value := range obj.member {
 		realKey := key
 		if key == "self_type" {
 			realKey = "type"
 		}
+		if strings.HasPrefix(key, "_") {
+			key = "M" + key
+		}
+
 		file.WriteString(fmt.Sprintf("\t%s %s `json:\"%s\"`\n", key, value, strings.ToLower(realKey)))
+		index++
+		if index == len(obj.member) && obj.usetype == "list" {
+			file.WriteString(fmt.Sprintf("\tNextptr *%sModel\n", obj.name))
+		}
 	}
 
-	file.WriteString("}")
+	file.WriteString("}\n\n")
+
+	t := strings.ToLower(string(obj.name[0]))
+	//全部重写ModelName()
+	file.WriteString("func (" + t + " *" + obj.name + "Model) ModelName() string {\n")
+	file.WriteString("\treturn \"" + obj.tablename + "\"\n")
+	file.WriteString("}\n\n")
+
+	//全部重写UpdateModel()
+	file.WriteString("func (" + t + " *" + obj.name + "Model) UpdateModel() {\n")
+	if obj.usetype == "list" {
+		file.WriteString("\tcurrent := " + t + "\n")
+		file.WriteString("\tfor current.Nextptr != nil{\n")
+		file.WriteString(fmt.Sprintf("\t\tif current.Nextptr.IsEquals(%s){\n", t))
+		file.WriteString("\t\t\tmodel := *" + t + "\n")
+		file.WriteString("\t\t\tmodel.Nextptr = current.Nextptr.Nextptr\n")
+		file.WriteString("\t\t\tcurrent.Nextptr = &model\n")
+		file.WriteString("\t\t}else{\n")
+		file.WriteString("\t\t\tcurrent = current.Nextptr\n")
+		file.WriteString("\t\t}\n")
+		file.WriteString("\t}\n")
+		file.WriteString("\tif current.Nextptr == nil{\n")
+		file.WriteString("\t\tmodel := *" + t + "\n")
+		file.WriteString("\t\tmodel.Nextptr = nil\n")
+		file.WriteString("\t\tcurrent.Nextptr = &model\n")
+		file.WriteString("\t}\n")
+	}
+	file.WriteString("}\n\n")
+
+	//全部重写IsEquals()
+	file.WriteString("func (" + strings.ToLower(string(obj.name[0])) + " *" + obj.name + "Model) IsEquals(model IBaseModel) bool {\n")
+	if obj.usetype == "list" {
+		file.WriteString("\tobj,ok := model.(*" + obj.name + "Model)\n")
+		file.WriteString("\tif !ok{\n")
+		file.WriteString("\t\treturn false\n")
+		file.WriteString("\t}\n")
+		switch obj.tablename {
+		case "user_raw_row":
+			file.WriteString("\treturn u.Uid == obj.Uid && u.M_type == obj.M_type\n")
+		case "user_raw_row_ext":
+			file.WriteString("\treturn u.Uid == obj.Uid && u.M_type == obj.M_type && u.M_sub_type == obj.M_sub_type\n")
+		case "user_city":
+			file.WriteString("\treturn u.Uid == obj.Uid && u.City_id == obj.City_id\n")
+		default:
+			file.WriteString("\treturn obj == nil\n")
+		}
+	} else {
+		file.WriteString("\treturn false\n")
+	}
+	file.WriteString("}\n\n")
 }
 
 func ParseStructName(str string) string {
@@ -114,6 +194,9 @@ func ParseStructMember(str string) (string, string) {
 	str = strings.TrimSpace(str)
 	slice := strings.Split(str, " ")
 	member := slice[0]
+	if member == "" {
+		return "", ""
+	}
 	if strings.Contains(strings.ToLower(member), "primary") ||
 		strings.Contains(strings.ToLower(member), "key") ||
 		strings.Contains(strings.ToLower(member), ")") {
@@ -130,20 +213,29 @@ func ParseStructMember(str string) (string, string) {
 	member = string(runes)
 
 	datatype := ""
-	switch strings.ToLower(slice[1]) {
+	lowerStr := strings.ToLower(slice[1])
+	switch lowerStr {
 	case "bigint":
+		fallthrough
+	case "int":
 		datatype = "int32"
+	case "mediumint":
+		datatype = "int16"
 	case "bigint(20)":
 		datatype = "int64"
 	case "timestamp":
-		datatype = "int64"
+		datatype = "float64"
 	default:
-		if strings.Contains(slice[1], "varchar") {
-			datatype = "string"
-		} else if strings.Contains(slice[1], "tinyint") {
+		if strings.Contains(lowerStr, "varchar") {
+			datatype = "interface{}"
+		} else if strings.Contains(lowerStr, "tinyint") {
 			datatype = "int8"
-		} else if strings.Contains(slice[1], "blob") {
-			datatype = "map[string]interface{}"
+		} else if strings.Contains(lowerStr, "smallint") {
+			datatype = "int16"
+		} else if strings.Contains(lowerStr, "decimal") {
+			datatype = "float64"
+		} else if strings.Contains(lowerStr, "blob") {
+			datatype = "interface{}"
 		} else {
 			datatype = "string"
 		}

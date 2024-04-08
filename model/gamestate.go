@@ -7,8 +7,8 @@
 package model
 
 import (
-	"fmt"
 	"github.com/bench/tools/util"
+	zap "github.com/openownworld/go-utils/log/zaplog"
 )
 
 // 游戏中状态
@@ -18,7 +18,8 @@ type GameFSMState struct {
 }
 
 func (g *GameFSMState) Enter() {
-	fmt.Println(g.player.Fpid)
+	zap.Info("GameFSMState Enter,fpid=", g.player.GetFpid(), ",uid=", g.player.GetUid())
+	g.player.GmCommand()
 }
 
 func (g *GameFSMState) Exit() {

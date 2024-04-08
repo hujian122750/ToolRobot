@@ -8,5 +8,11 @@ package data
 
 type LoginInfo struct {
 	ServerUrl     string
-	ConfigVersion int64
+	ConfigVersion float64
+	Seq           int64
+	InitInfo      LoginInitInfo
+}
+
+type LoginInitInfo struct {
+	Token string `json:"token"`
 }

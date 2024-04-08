@@ -1,15 +1,47 @@
-package data
-
 /**
  * @Author: hujian
  * @Description: userrawrow
  * @File: UserRawRowmodel.go
- * @Date: 2024/2/25 22:39
+ * @Date: 2024/04/08 20:46:04
  */
+package data
+
 type UserRawRowModel struct {
+	Mtime float64 `json:"mtime"`
+	Ctime float64 `json:"ctime"`
 	Uid int32 `json:"uid"`
-	_type string `json:"_type"`
-	_content string `json:"_content"`
-	Mtime int64 `json:"mtime"`
-	Ctime int64 `json:"ctime"`
+	M_type int32 `json:"_type"`
+	M_content interface{} `json:"_content"`
+	Nextptr *UserRawRowModel
 }
+
+func (u *UserRawRowModel) ModelName() string {
+	return "user_raw_row"
+}
+
+func (u *UserRawRowModel) UpdateModel() {
+	current := u
+	for current.Nextptr != nil{
+		if current.Nextptr.IsEquals(u){
+			model := *u
+			model.Nextptr = current.Nextptr.Nextptr
+			current.Nextptr = &model
+		}else{
+			current = current.Nextptr
+		}
+	}
+	if current.Nextptr == nil{
+		model := *u
+		model.Nextptr = nil
+		current.Nextptr = &model
+	}
+}
+
+func (u *UserRawRowModel) IsEquals(model IBaseModel) bool {
+	obj,ok := model.(*UserRawRowModel)
+	if !ok{
+		return false
+	}
+	return u.Uid == obj.Uid && u.M_type == obj.M_type
+}
+
