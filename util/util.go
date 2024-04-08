@@ -232,8 +232,10 @@ func ParseStructMember(str string) (string, string) {
 			datatype = "int8"
 		} else if strings.Contains(lowerStr, "smallint") {
 			datatype = "int16"
+		} else if strings.Contains(lowerStr, "decimal") {
+			datatype = "float64"
 		} else if strings.Contains(lowerStr, "blob") {
-			datatype = "map[string]interface{}"
+			datatype = "interface{}"
 		} else {
 			datatype = "string"
 		}

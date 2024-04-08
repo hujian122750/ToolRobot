@@ -2,13 +2,13 @@
  * @Author: hujian
  * @Description: userrawrowext
  * @File: UserRawRowExtmodel.go
- * @Date: 2024/04/07 20:41:36
+ * @Date: 2024/04/08 20:46:04
  */
 package data
 
 type UserRawRowExtModel struct {
 	M_sub_type int32 `json:"_sub_type"`
-	M_content map[string]interface{} `json:"_content"`
+	M_content interface{} `json:"_content"`
 	Mtime float64 `json:"mtime"`
 	Ctime float64 `json:"ctime"`
 	Uid int32 `json:"uid"`
